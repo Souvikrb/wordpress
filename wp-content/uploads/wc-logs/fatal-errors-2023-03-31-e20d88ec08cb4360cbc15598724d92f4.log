@@ -1,0 +1,48 @@
+2023-03-31T05:28:19+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on string in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php:46
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\ongbong\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\wordpress\ongbong\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wordpress\ongbong\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php on line 46
+
+2023-03-31T05:28:49+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on string in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php:46
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\ongbong\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\wordpress\ongbong\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wordpress\ongbong\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php on line 46
+
+2023-03-31T05:29:46+00:00 CRITICAL Uncaught Error: Call to a member function get_price_html() on string in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php:45
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\ongbong\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\wordpress\ongbong\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wordpress\ongbong\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php on line 45
+
+2023-03-31T05:30:30+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on string in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php:45
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\ongbong\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\wordpress\ongbong\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wordpress\ongbong\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php on line 45
+
+2023-03-31T05:38:41+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on string in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php:6
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\ongbong\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\wordpress\ongbong\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wordpress\ongbong\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php on line 6
+
+2023-03-31T05:42:21+00:00 CRITICAL Uncaught Error: Call to a member function get_image_id() on string in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php:6
+Stack trace:
+#0 C:\xampp\htdocs\wordpress\ongbong\wp-includes\template-loader.php(106): include()
+#1 C:\xampp\htdocs\wordpress\ongbong\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wordpress\ongbong\index.php(17): require('C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\woocommerce\single-product.php on line 6
+

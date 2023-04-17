@@ -1,0 +1,27 @@
+2023-04-17T18:11:10+00:00 ERROR Could not enable webhook for localhost
+2023-04-17T18:11:10+00:00 INFO Trying to create one_cc_address_sync_cron
+2023-04-17T18:11:10+00:00 INFO Failed to create one_cc_address_sync_cron as invalid one cc merchant
+2023-04-17T18:11:10+00:00 INFO Attempting to delete one_cc_address_sync_cron, status: cancelled, message: invalid_1cc_merchant
+2023-04-17T18:11:10+00:00 INFO Deleted one_cc_address_sync_cron  if exists
+2023-04-17T18:11:10+00:00 INFO updateAddressSyncCronData: status=cancelled, message=invalid_1cc_merchant, cronStatus=deleted
+2023-04-17T18:11:10+00:00 INFO updateAddressSyncCronData: successfully updated
+2023-04-17T18:12:45+00:00 INFO Called process_payment with params order_id 1152
+2023-04-17T18:12:45+00:00 INFO Set transient with key razorpay_wc_order_id params order_id 1152
+2023-04-17T18:12:46+00:00 INFO getRazorpayPaymentParams 1152
+2023-04-17T18:12:46+00:00 INFO createOrGetRazorpayOrderId 1152 and is1ccCheckout is set to no
+2023-04-17T18:12:46+00:00 INFO Called createOrGetRazorpayOrderId with params orderId 1152 and is_magic_checkout_order is set to no
+2023-04-17T18:12:46+00:00 INFO razorpayOrderId  | sessionKey razorpay_order_id1152
+2023-04-17T18:12:46+00:00 INFO Called createRazorpayOrderId with params orderId 1152 and sessionKey razorpay_order_id1152
+2023-04-17T18:12:46+00:00 INFO Called getOrderCreationData with params orderId 1152
+2023-04-17T18:12:46+00:00 INFO Called getOrderCreationData with params orderId 1152 and is1ccOrder is set to no
+2023-04-17T18:12:46+00:00 INFO For order 1152
+2023-04-17T18:12:46+00:00 INFO {"receipt":1152,"amount":400000,"currency":"INR","payment_capture":1,"app_offer":0,"notes":{"woocommerce_order_number":"1152"}}
+2023-04-17T18:12:47+00:00 INFO For order session key razorpay_order_id1152
+2023-04-17T18:14:01+00:00 INFO Called check_razorpay_response: wc_order_DASbFhc4RErMn
+2023-04-17T18:14:01+00:00 INFO Get order id in check_razorpay_response: orderId 1152
+2023-04-17T18:14:01+00:00 INFO verifySignature orderId: 1152
+2023-04-17T18:14:01+00:00 INFO verifySignature attr
+2023-04-17T18:14:01+00:00 INFO {"razorpay_payment_id":"pay_LexB6pTopNnyOz","razorpay_signature":"06bcd0d625526ac7b80765e4e1b2c6248223c92507dcc5c4112c71712f51389d","razorpay_order_id":"order_LexA1xWPU2RvLL"}
+2023-04-17T18:14:01+00:00 INFO updateOrder orderId: 1152 , razorpayPaymentId: pay_LexB6pTopNnyOz , success: 1
+2023-04-17T18:14:01+00:00 INFO Order details check initiated step 1 for the orderId: 1152
+2023-04-17T18:14:06+00:00 INFO Woocommerce orderId: 1152 processed through callback

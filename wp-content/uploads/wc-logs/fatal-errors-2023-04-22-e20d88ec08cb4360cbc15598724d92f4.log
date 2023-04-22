@@ -1,0 +1,4 @@
+2023-04-22T04:37:15+00:00 CRITICAL syntax error, unexpected 'include' (T_INCLUDE), expecting ']' in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\home.php on line 168
+
+2023-04-22T04:38:06+00:00 CRITICAL syntax error, unexpected 'number' (T_STRING), expecting ']' in C:\xampp\htdocs\wordpress\ongbong\wp-content\themes\oceanwp\home.php on line 168
+

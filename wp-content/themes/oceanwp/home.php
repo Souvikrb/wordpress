@@ -20,7 +20,7 @@
 						The point of using Lorem Ipsum is that it has a more-or-less
 						 normal distribution of letters, as opposed to using Content here, 
 						content here', making it look like readable English.</p>
-						<a href="shop.html"><button class="btn btn-style">Shop Now</button></a>
+						<a href="<?=site_url()?>/shop"><button class="btn btn-style">Shop Now</button></a>
 					</div>
 				  </div>
 				</div>
@@ -35,7 +35,7 @@
 						The point of using Lorem Ipsum is that it has a more-or-less
 						 normal distribution of letters, as opposed to using Content here, 
 						content here', making it look like readable English.</p>
-						<a href="shop.html"><button class="btn btn-style">Shop Now</button></a>
+						<a href="<?=site_url()?>/shop"><button class="btn btn-style">Shop Now</button></a>
 					</div>
 				  </div>
 				</div>
@@ -50,7 +50,7 @@
 						The point of using Lorem Ipsum is that it has a more-or-less
 						 normal distribution of letters, as opposed to using Content here, 
 						content here', making it look like readable English.</p>
-						<a href="shop.html"><button class="btn btn-style">Shop Now</button></a>
+						<a href="<?=site_url()?>/shop"><button class="btn btn-style">Shop Now</button></a>
 					</div>
 				  </div>
 				</div>
@@ -150,7 +150,7 @@
                      <h4>Let us make the differences<br/>Interior Design</h4>
                   </div>
                   <div class="full">
-                     <a class="read-btn" href="contact.html">Discover Now</a>
+                     <a class="read-btn" href="<?=site_url()?>/contact-us">Discover Now</a>
                   </div>
                </div>
             </div>
@@ -165,47 +165,48 @@
                 <div class="main_heading text_align_center">
 					<h2><span>Popular Categories</span></h2>
 				 </div>
-
+                 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="categories-item">
-                            <div class="image">
-                                <a href="shop.html">
-                                    <img src="<?=get_template_directory_uri()?>/images/categories1.jpg" alt="image">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h3>Home Decoration</h3>
-                            </div>
-                        </div>
-                    </div>
+                <?php
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="categories-item">
-                            <div class="image">
-                                <a href="shop.html">
-                                    <img src="<?=get_template_directory_uri()?>/images/categories2.jpg" alt="image">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h3>Craft Flower Vase</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-                        <div class="categories-item">
-                            <div class="image">
-                                <a href="shop.html">
-                                    <img src="<?=get_template_directory_uri()?>/images/categories3.jpg" alt="image">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h3>Baby Toy’s & Entertainment</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        $taxonomy     = 'product_cat';
+                        $orderby      = 'name';  
+                        $show_count   = 0;      // 1 for yes, 0 for no
+                        $pad_counts   = 0;      // 1 for yes, 0 for no
+                        $hierarchical = 1;      // 1 for yes, 0 for no  
+                        $title        = '';  
+                        $empty        = 1;
+                        $args = array(
+                            'taxonomy'     => $taxonomy,
+                            'orderby'      => $orderby,
+                            'show_count'   => $show_count,
+                            'pad_counts'   => $pad_counts,
+                            'hierarchical' => $hierarchical,
+                            'title_li'     => $title,
+                            'hide_empty'   => $empty,
+                        );
+                        $all_categories = get_categories( $args );
+                        foreach ($all_categories as $cat) {
+                            if($cat->category_parent == 0) {
+                                $category_id = $cat->term_id;
+                                $featured_img = wp_get_attachment_url(get_term_meta( $category_id, 'thumbnail_id', true )); 
+                        ?> 
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="categories-item">
+                                        <a href="<?=get_term_link($cat->slug, 'product_cat')?>">
+                                            <div class="image">
+                                                    <img src="<?=$featured_img?>" alt="image">
+                                            </div>
+                                            <div class="content">
+                                                <h3><?=$cat->name?></h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                    <?php }       
+                        }
+                    ?>
+                   </div>
             </div>
         </section>
         <!-- End Categories Area -->
@@ -225,7 +226,7 @@
                                         <p>Lorem ipsum dolor sit amet, jwellery jconsectetur adipiscing.</p>
         
                                         <div class="overview-btn">
-                                            <a href="shop.html" class="default-btn">Shop Now</a>
+                                            <a href="<?=site_url()?>/shop" class="default-btn">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -254,7 +255,7 @@
                                         <p>Lorem ipsum dolor sit amet, jwellery jconsectetur adipiscing.</p>
         
                                         <div class="overview-btn">
-                                            <a href="shop.html" class="default-btn">Shop Now</a>
+                                            <a href="<?=site_url()?>/shop" class="default-btn">Shop Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -322,7 +323,6 @@
                                         <div class="new">
                                             <span>New
 
-                                            <?=$product->get_price();?>
                                             </span>
                                             
                                         </div>
@@ -336,7 +336,7 @@
                                         <h3>
                                             <a href="<?=get_permalink()?>"><?=get_the_title()?></a>
                                         </h3>
-                                        <span class="woocommerce-Price-amount amount"><?php $price = get_post_meta( get_the_ID(), '_price', true ); ?><?php echo wc_price( $price ); ?></span>
+                                        <span ><?=$product->get_price_html();?></span>
                                         <ul class="star-list">
                                             <li>
                                                 <i class="fa-solid fa-star"></i>

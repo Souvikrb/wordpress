@@ -320,7 +320,11 @@
                                         </ul>
 
                                         <div class="new">
-                                            <span>New</span>
+                                            <span>New
+
+                                            <?=$product->get_price();?>
+                                            </span>
+                                            
                                         </div>
 
                                         <div class="shop-btn">
@@ -332,7 +336,7 @@
                                         <h3>
                                             <a href="<?=get_permalink()?>"><?=get_the_title()?></a>
                                         </h3>
-                                        <span><?php $price = get_post_meta( get_the_ID(), '_price', true ); ?><?php echo wc_price( $price ); ?></span>
+                                        <span class="woocommerce-Price-amount amount"><?php $price = get_post_meta( get_the_ID(), '_price', true ); ?><?php echo wc_price( $price ); ?></span>
                                         <ul class="star-list">
                                             <li>
                                                 <i class="fa-solid fa-star"></i>
@@ -378,56 +382,44 @@
 
                     <div class="col-lg-6">
                         <div id="testimonial" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-item active">
-                                <div class="testimonial-content">
-                                    <span>Testimonials</span>
-                                    <h3>What Client’s Say About Us</h3>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-quote-left"></i>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing and</p>
 
-                                    <div class="info">
-                                        <img src="<?=get_template_directory_uri()?>/images/client1.jpg" alt="image">
-                                        <h4>Alison Jack</h4>
-                                        <p>Web Developer</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php 
 
-                            <div class="carousel-item">
-                                <div class="testimonial-content">
-                                    <span>Testimonials</span>
-                                    <h3>What Client’s Say About Us</h3>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-quote-left"></i>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing and</p>
+                                $args = array(  
+                                    'post_type' => 'testimonial',
+                                    'post_status' => 'publish',
+                                    'orderby' => 'title', 
+                                    'order' => 'ASC', 
+                                );
+                            
+                                $loop = new WP_Query( $args ); 
+                                $active = 'active';   
+                                while ( $loop->have_posts() ) : $loop->the_post();
+                                $thumb_img_src = get_the_post_thumbnail_url(get_the_ID(),'full');  
+                                ?>
+                                    <div class="carousel-item <?=$active?>">
+                                        <div class="testimonial-content">
+                                            <span>Testimonials</span>
+                                            <h3>What Client’s Say About Us</h3>
+                                            <div class="icon">
+                                                <i class="fa-solid fa-quote-left"></i>
+                                            </div>
+                                            <?=the_content()?>
 
-                                    <div class="info">
-                                        <img src="<?=get_template_directory_uri()?>/images/client1.jpg" alt="image">
-                                        <h4>Alison Jack</h4>
-                                        <p>Web Developer</p>
+                                            <div class="info">
+                                                <img src="<?=$thumb_img_src?>" alt="image">
+                                                <h4><?=the_title()?></h4>
+                                                <p><?=the_field("designation");?></p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
 
-                           <div class="carousel-item ">
-                                <div class="testimonial-content">
-                                    <span>Testimonials</span>
-                                    <h3>What Client’s Say About Us</h3>
-                                    <div class="icon">
-                                        <i class="fa-solid fa-quote-left"></i>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem Ipsum is simply dummy text of the printing and</p>
-
-                                    <div class="info">
-                                        <img src="<?=get_template_directory_uri()?>/images/client1.jpg" alt="image">
-                                        <h4>Alison Jack</h4>
-                                        <p>Web Developer</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php 
+                                $active = '';  
+                                endwhile;
+                                wp_reset_postdata();
+                            
+                            ?>
                         </div>
                     </div>
                 </div>

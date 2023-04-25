@@ -1155,3 +1155,9 @@ if ( ! function_exists( 'owp_fs' ) ) {
 // endregion
 
 new OCEANWP_Theme_Class();
+
+
+register_nav_menus(array(
+	'primary' => __('Primary_menu'),
+));
+

@@ -70,25 +70,36 @@
          <div class="header_bottom">
             <div class="container">
                <div class="header-top">
-                  <a href="index.html" class="header-logo"><img src="<?=get_template_directory_uri()?>/images/logos/logo.png" alt="logo"/></a>
+                  <a href="<?=site_url()?>" class="header-logo"><img src="<?=get_template_directory_uri()?>/images/logos/logo.png" alt="logo"/></a>
 				  <div class="header-search">
-					   <form class="search-global">
-						  <input type="text" placeholder="search"  class="search-global__input"/>
+					   <form class="search-global" method="GET">
+						  <input name="s" type="text" placeholder="search"  class="search-global__input"/>
 						  <button class="search-global__btn"><i class="fa fa-search"></i></button>
 					   </form>
 				  </div>
 				  
 				  <div class="header-right">
-					<a href="#"><span class="cart-num">2</span><i class="fa-solid fa-cart-shopping"></i></a>
-					<a href="#"><i class="fa-regular fa-heart"></i></a>
-					<a href="#"><i class="fa-regular fa-user"></i></a>
+					<a href="<?=site_url()?>/cart"><span class="cart-num">2</span><i class="fa-solid fa-cart-shopping"></i></a>
+					<a href="<?=site_url()?>/cart"><i class="fa-regular fa-heart"></i></a>
+					<a href="<?=site_url()?>/my-account"><i class="fa-regular fa-user"></i></a>
 				  </div>
                </div>
             </div>
 			<div class="main-nav">
 				<div class="menu_side">
 					<div id="navbar_menu">
-					   <ul class="first-ul">
+						<?php 
+							$args = array(
+								'theme_location'=>'primary',
+								'menu'=>'navbar-nav',
+								'container'=>'ul',
+								'menu_class'=>'first-ul',
+							);
+		
+						?>
+						<?=wp_nav_menu($args)?> 
+
+					   <!-- <ul class="first-ul">
 						  <li>
 							 <a class="active" href="index.html">Home</a>
 						  </li>
@@ -148,6 +159,7 @@
 						  <li><a href="about.html">Mission & Vision</a></li>
 						  <li><a href="about.html">About Us</a></li>
 					   </ul>
+					 -->
 					</div>
 				 </div>
 			</div>

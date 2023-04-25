@@ -4917,4 +4917,10 @@ footer ul.social_icons {
 	padding: 20px 10px;
 	background:#fff;
 }
+.oceanwp-toolbar{
+	display: none;
+}
 
+.products.oceanwp-row{
+	margin-top: 200px;
+}
